@@ -13,6 +13,16 @@
 		CEE4D91A2DBBDDE40082AF68 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEE4D9182DBBDDE40082AF68 /* Main.storyboard */; };
 		CEE4D91C2DBBDDE80082AF68 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEE4D91B2DBBDDE80082AF68 /* Assets.xcassets */; };
 		CEE4D91F2DBBDDE80082AF68 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEE4D91D2DBBDDE80082AF68 /* LaunchScreen.storyboard */; };
+		CEE4D92A2DBBDFE30082AF68 /* ViewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE4D9282DBBDFE30082AF68 /* ViewCollectionViewCell.swift */; };
+		CEE4D92B2DBBDFE30082AF68 /* ViewCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEE4D9292DBBDFE30082AF68 /* ViewCollectionViewCell.xib */; };
+		CEE4D92E2DBBE8640082AF68 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE4D92D2DBBE8640082AF68 /* Model.swift */; };
+		CEE4D9312DBBE8FD0082AF68 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE4D9302DBBE8FD0082AF68 /* NetworkService.swift */; };
+		CEE4D9382DBBF4560082AF68 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE4D9372DBBF4560082AF68 /* DetailsViewController.swift */; };
+		CEE4D93B2DBBF4940082AF68 /* Controller+exc.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE4D93A2DBBF4940082AF68 /* Controller+exc.swift */; };
+		CEE4D93E2DBBF7700082AF68 /* DetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE4D93C2DBBF7700082AF68 /* DetailCollectionViewCell.swift */; };
+		CEE4D93F2DBBF7700082AF68 /* DetailCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEE4D93D2DBBF7700082AF68 /* DetailCollectionViewCell.xib */; };
+		CEE4D9652DBEAED00082AF68 /* ItemVC'.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE4D9642DBEAED00082AF68 /* ItemVC'.swift */; };
+		CEE4D9682DBFBD6A0082AF68 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE4D9672DBFBD6A0082AF68 /* UserDefaultsManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +34,16 @@
 		CEE4D91B2DBBDDE80082AF68 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CEE4D91E2DBBDDE80082AF68 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CEE4D9202DBBDDE80082AF68 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEE4D9282DBBDFE30082AF68 /* ViewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCollectionViewCell.swift; sourceTree = "<group>"; };
+		CEE4D9292DBBDFE30082AF68 /* ViewCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewCollectionViewCell.xib; sourceTree = "<group>"; };
+		CEE4D92D2DBBE8640082AF68 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		CEE4D9302DBBE8FD0082AF68 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		CEE4D9372DBBF4560082AF68 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		CEE4D93A2DBBF4940082AF68 /* Controller+exc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Controller+exc.swift"; sourceTree = "<group>"; };
+		CEE4D93C2DBBF7700082AF68 /* DetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCollectionViewCell.swift; sourceTree = "<group>"; };
+		CEE4D93D2DBBF7700082AF68 /* DetailCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailCollectionViewCell.xib; sourceTree = "<group>"; };
+		CEE4D9642DBEAED00082AF68 /* ItemVC'.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ItemVC'.swift"; sourceTree = "<group>"; };
+		CEE4D9672DBFBD6A0082AF68 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +76,81 @@
 		CEE4D9112DBBDDE30082AF68 /* 25_04_2025 */ = {
 			isa = PBXGroup;
 			children = (
-				CEE4D9122DBBDDE40082AF68 /* AppDelegate.swift */,
-				CEE4D9142DBBDDE40082AF68 /* SceneDelegate.swift */,
-				CEE4D9162DBBDDE40082AF68 /* ViewController.swift */,
+				CEE4D9662DBFBD510082AF68 /* UserDefaultsManager */,
+				CEE4D9392DBBF4760082AF68 /* Ext */,
+				CEE4D9322DBBF1D80082AF68 /* Views */,
+				CEE4D92F2DBBE8D80082AF68 /* Networking */,
+				CEE4D92C2DBBE84E0082AF68 /* Model */,
+				CEE4D9272DBBDF990082AF68 /* App */,
+				CEE4D9262DBBDF940082AF68 /* Cells */,
 				CEE4D9182DBBDDE40082AF68 /* Main.storyboard */,
 				CEE4D91B2DBBDDE80082AF68 /* Assets.xcassets */,
 				CEE4D91D2DBBDDE80082AF68 /* LaunchScreen.storyboard */,
 				CEE4D9202DBBDDE80082AF68 /* Info.plist */,
 			);
 			path = 25_04_2025;
+			sourceTree = "<group>";
+		};
+		CEE4D9262DBBDF940082AF68 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				CEE4D9282DBBDFE30082AF68 /* ViewCollectionViewCell.swift */,
+				CEE4D9292DBBDFE30082AF68 /* ViewCollectionViewCell.xib */,
+				CEE4D93C2DBBF7700082AF68 /* DetailCollectionViewCell.swift */,
+				CEE4D93D2DBBF7700082AF68 /* DetailCollectionViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		CEE4D9272DBBDF990082AF68 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				CEE4D9122DBBDDE40082AF68 /* AppDelegate.swift */,
+				CEE4D9142DBBDDE40082AF68 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		CEE4D92C2DBBE84E0082AF68 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CEE4D92D2DBBE8640082AF68 /* Model.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CEE4D92F2DBBE8D80082AF68 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				CEE4D9302DBBE8FD0082AF68 /* NetworkService.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		CEE4D9322DBBF1D80082AF68 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CEE4D9162DBBDDE40082AF68 /* ViewController.swift */,
+				CEE4D9372DBBF4560082AF68 /* DetailsViewController.swift */,
+				CEE4D9642DBEAED00082AF68 /* ItemVC'.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CEE4D9392DBBF4760082AF68 /* Ext */ = {
+			isa = PBXGroup;
+			children = (
+				CEE4D93A2DBBF4940082AF68 /* Controller+exc.swift */,
+			);
+			path = Ext;
+			sourceTree = "<group>";
+		};
+		CEE4D9662DBFBD510082AF68 /* UserDefaultsManager */ = {
+			isa = PBXGroup;
+			children = (
+				CEE4D9672DBFBD6A0082AF68 /* UserDefaultsManager.swift */,
+			);
+			path = UserDefaultsManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,8 +212,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEE4D91F2DBBDDE80082AF68 /* LaunchScreen.storyboard in Resources */,
+				CEE4D92B2DBBDFE30082AF68 /* ViewCollectionViewCell.xib in Resources */,
 				CEE4D91C2DBBDDE80082AF68 /* Assets.xcassets in Resources */,
 				CEE4D91A2DBBDDE40082AF68 /* Main.storyboard in Resources */,
+				CEE4D93F2DBBF7700082AF68 /* DetailCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,9 +226,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEE4D92E2DBBE8640082AF68 /* Model.swift in Sources */,
+				CEE4D9652DBEAED00082AF68 /* ItemVC'.swift in Sources */,
 				CEE4D9172DBBDDE40082AF68 /* ViewController.swift in Sources */,
+				CEE4D92A2DBBDFE30082AF68 /* ViewCollectionViewCell.swift in Sources */,
+				CEE4D9682DBFBD6A0082AF68 /* UserDefaultsManager.swift in Sources */,
 				CEE4D9132DBBDDE40082AF68 /* AppDelegate.swift in Sources */,
+				CEE4D9382DBBF4560082AF68 /* DetailsViewController.swift in Sources */,
+				CEE4D9312DBBE8FD0082AF68 /* NetworkService.swift in Sources */,
+				CEE4D93B2DBBF4940082AF68 /* Controller+exc.swift in Sources */,
 				CEE4D9152DBBDDE40082AF68 /* SceneDelegate.swift in Sources */,
+				CEE4D93E2DBBF7700082AF68 /* DetailCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
