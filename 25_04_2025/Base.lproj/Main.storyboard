@@ -151,7 +151,7 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="Favorite"/>
                                                 <connections>
-                                                    <action selector="selectLovelyButton:" destination="dCw-8t-6bF" eventType="touchUpInside" id="3EF-M5-dlE"/>
+                                                    <action selector="selectLovelyButton:" destination="dCw-8t-6bF" eventType="touchUpInside" id="ubR-GA-3ck"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -281,7 +281,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="imageView" destination="e7C-ku-ISe" id="iQ0-Id-ANz"/>
-                        <outlet property="lovelyButton" destination="FcK-xl-En9" id="9Ep-5n-Wmd"/>
+                        <outlet property="lovelyButton" destination="FcK-xl-En9" id="tYb-2q-Xr7"/>
                         <outlet property="subtitleLabel" destination="zP3-WL-Di2" id="Ide-CK-SVT"/>
                         <outlet property="titleLabel" destination="Ghq-B2-Iyc" id="5j0-rz-9MU"/>
                     </connections>

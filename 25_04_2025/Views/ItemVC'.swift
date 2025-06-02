@@ -15,6 +15,7 @@ class ItemVC: UIViewController{
     @IBOutlet weak var subtitleLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var lovelyButton: UIButton!
+    
     var imageName: String?
     var titleText: String?
     var subtitleText: String?
@@ -35,19 +36,31 @@ class ItemVC: UIViewController{
         let heartImage = UIImage(named: "heartIcon")?.withRenderingMode(.alwaysTemplate)
         lovelyButton.setImage(heartImage, for: .normal)
 
-        lovelyButton.tintColor = isLovelySelected ? UIColor(named: "selectColor") ?? .red : .black
+        lovelyButton.tintColor = isLovelySelected ? UIColor(named: "buttonColor") ?? .red : .black
     }
 
+   
+    
+    
     @IBAction func selectLovelyButton(_ sender: UIButton) {
+        print("Salammmm")
+        
         isLovelySelected.toggle()
-            sender.tintColor = isLovelySelected ? UIColor(named: "selectColor") ?? .red : .black
-            delegate?.didUpdateItem(ViewCollectionViewCell.Item(
-                id: itemId ?? Int.random(in: 1000...9999),
-                image: imageName ?? "",
-                title: titleText ?? "",
-                subtitle: subtitleText ?? "",
-                isFavorite: isLovelySelected
-            ))
-            self.navigationController?.popViewController(animated: true)
+
+           sender.tintColor = isLovelySelected ? UIColor(named: "buttonColor") ?? .red : .black
+
+           if let id = itemId {
+               UserDefaultsManager.shared.toggleFavorite(id: id)
+           }
+
+           delegate?.didUpdateItem(ViewCollectionViewCell.Item(
+               id: itemId ?? Int.random(in: 1000...9999),
+               image: imageName ?? "",
+               title: titleText ?? "",
+               subtitle: subtitleText ?? "",
+               isFavorite: isLovelySelected
+           ))
+
+           self.navigationController?.popViewController(animated: true)
     }
 }

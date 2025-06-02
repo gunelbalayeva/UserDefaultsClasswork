@@ -96,7 +96,7 @@
             <size key="customSize" width="163" height="213"/>
             <connections>
                 <outlet property="favoriteButton" destination="ZQ9-Om-VXZ" id="bXg-gd-GuO"/>
-                <outlet property="image" destination="4vs-Ui-Fxg" id="fK5-Is-P4r"/>
+                <outlet property="imageView" destination="4vs-Ui-Fxg" id="ei6-eO-zvc"/>
                 <outlet property="subtitle" destination="nd9-jk-15d" id="aSi-aO-zaD"/>
                 <outlet property="title" destination="uug-44-Pdy" id="C7V-67-3RF"/>
             </connections>

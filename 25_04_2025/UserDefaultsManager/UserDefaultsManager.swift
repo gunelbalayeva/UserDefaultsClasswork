@@ -4,8 +4,8 @@
 //
 //  Created by User on 28.04.25.
 //
-
 import Foundation
+
 class UserDefaultsManager {
     static let shared = UserDefaultsManager()
 
@@ -23,5 +23,9 @@ class UserDefaultsManager {
 
     func getFavorites() -> [Int] {
         return UserDefaults.standard.array(forKey: favoritesKey) as? [Int] ?? []
+    }
+
+    func isFavorite(id: Int) -> Bool {
+        return getFavorites().contains(id)
     }
 }

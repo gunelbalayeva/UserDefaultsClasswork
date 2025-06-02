@@ -13,12 +13,13 @@ enum CollectionList{
 class ViewController: UIViewController {
     @IBOutlet weak var collectionview: UICollectionView!
     var list: [CollectionList] = [
-        .collectionList(.init(id: 1, image: "image1", title: "Yolana", subtitle: "Fotosessiya", isFavorite: false)),
-        .collectionList(.init(id: 2, image: "image2", title: "Wavesfactory", subtitle: "Fotosessiya", isFavorite: false)),
-        .collectionList(.init(id: 3, image: "image3", title: "Sayyes", subtitle: "Fotosessiya", isFavorite: false)),
-        .collectionList(.init(id: 4, image: "image4", title: "Aeroty", subtitle: "Fotosessiya", isFavorite: false)),
-        .collectionList(.init(id: 5, image: "image5", title: "HBM", subtitle: "Fotosessiya", isFavorite: false))
+        .collectionList(.init(id: 1, image: "image1", title: "Yolana", subtitle: "Fotosessiya", isFavorite: UserDefaultsManager.shared.isFavorite(id: 1))),
+        .collectionList(.init(id: 2, image: "image2", title: "Wavesfactory", subtitle: "Fotosessiya", isFavorite: UserDefaultsManager.shared.isFavorite(id: 2))),
+        .collectionList(.init(id: 3, image: "image3", title: "Sayyes", subtitle: "Fotosessiya", isFavorite: UserDefaultsManager.shared.isFavorite(id: 3))),
+        .collectionList(.init(id: 4, image: "image4", title: "Aeroty", subtitle: "Fotosessiya", isFavorite: UserDefaultsManager.shared.isFavorite(id: 4))),
+        .collectionList(.init(id: 5, image: "image5", title: "HBM", subtitle: "Fotosessiya", isFavorite: UserDefaultsManager.shared.isFavorite(id: 5)))
     ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionview.dataSource = self
@@ -27,6 +28,11 @@ class ViewController: UIViewController {
         setupCollectionViewLayout()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        collectionview.reloadData() 
+    }
+
     private func setupCollectionViewLayout() {
         if let layout = collectionview.collectionViewLayout as? UICollectionViewFlowLayout {
             let spacing: CGFloat = 16
@@ -80,30 +86,44 @@ extension ViewController:UICollectionViewDelegate,UICollectionViewDataSource {
 }
 
 extension ViewController:CollectionViewDelegate {
+    
     func didTapLovelyButton(in cell: ViewCollectionViewCell, with item: ViewCollectionViewCell.Item) {
         guard let vc = storyboard?.instantiateViewController(withIdentifier: ItemVC.identifier) as? ItemVC else {
             return
         }
         vc.item = item
-        vc.delegate = self
         vc.imageName = item.image
         vc.titleText = item.title
         vc.subtitleText = item.subtitle
-        vc.isLovelySelected = item.isLovelySelected
+        vc.isLovelySelected = item.isFavorite
+        cell.delegate = self
         vc.modalPresentationStyle = .fullScreen
+        if let index = list.firstIndex(where: {
+            switch $0 {
+            case .collectionList(let oldItem):
+                return oldItem.id == item.id
+            }
+        }) {
+            list[index] = .collectionList(item)
+            collectionview.reloadItems(at: [IndexPath(item: index, section: 0)])
+        }
+        collectionview.reloadData()
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }
+
+
 extension ViewController: ItemVCDelegate {
+    
     func didUpdateItem(_ item: ViewCollectionViewCell.Item) {
         if let index = list.firstIndex(where: {
             switch $0 {
             case .collectionList(let oldItem):
-                return oldItem.title == item.title && oldItem.subtitle == item.subtitle
+                return oldItem.id == item.id
             }
         }) {
             list[index] = .collectionList(item)
-            self.collectionview.reloadData()
+            collectionview.reloadItems(at: [IndexPath(item: index, section: 0)])
         }
     }
 }
