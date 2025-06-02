@@ -32,7 +32,6 @@ class DetailCollectionViewCell: UICollectionViewCell {
                 return
             }
             guard let data = data, let image = UIImage(data: data) else { return }
-            
             DispatchQueue.main.async {
                 self.imageView.image = image
             }
