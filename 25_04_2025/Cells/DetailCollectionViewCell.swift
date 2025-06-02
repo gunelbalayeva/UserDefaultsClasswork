@@ -26,8 +26,8 @@ class DetailCollectionViewCell: UICollectionViewCell {
     }
     private func loadImage(from urlString: String) {
         guard let url = URL(string: urlString) else { return }
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            if let error = error {
+        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+          if let error = error {
                 print("Error loading image: \(error)")
                 return
             }
@@ -36,6 +36,7 @@ class DetailCollectionViewCell: UICollectionViewCell {
             DispatchQueue.main.async {
                 self.imageView.image = image
             }
-        }.resume()
+        }
+        task.resume()
     }
 }
